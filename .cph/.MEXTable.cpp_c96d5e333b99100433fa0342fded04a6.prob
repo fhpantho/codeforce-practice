@@ -1,0 +1,1 @@
+{"name":"Local: MEXTable","url":"/Users/a12/Desktop/Codeforce folder/MEXTable.cpp","tests":[{"id":1736003774217,"input":"3\n1 1\n2 2\n3 5\n","output":"2\n3\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/a12/Desktop/Codeforce folder/MEXTable.cpp","group":"local","local":true}
