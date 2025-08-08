@@ -1,36 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool cmp(const pair<int, int> &a, const pair<int, int> &b)
+{
+    if (a.first == b.first)
+        return a.second < b.second;
+    return a.first > b.first;
+}
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        long long int n,k;
+        long long int n, k;
         cin >> n >> k;
-        
-        vector <long long int> ans;
-        vector < pair <long long int, long long int> > v;
-        for (int i = 1; i <= n; i++)
+        vector<int> result;
+        vector<pair<int, int>> v;
+        for (int i = 0; i < n; i++)
         {
-            long long int x;
+            int x;
             cin >> x;
-            x = x % k;
-            v.push_back({x,i});
+            if (x % k == 0)
+            {
+                result.push_back(i + 1);
+            }
+            else
+            {
+                v.push_back(make_pair(x % k, i + 1));
+            }
         }
 
-        sort(v.begin(), v.end());
-        for (int i = 0; i < n; i++)
+        sort(v.begin(), v.end(), cmp);
+
+        for (int i = 0; i < v.size(); i++)
         {
-            ans.push_back(v[i].second);
+            result.push_back(v[i].second);
         }
-        for (int i = 0; i < n; i++)
+
+        for (int i = 0; i < result.size(); i++)
         {
-            cout << ans[i] << " ";
+            cout << result[i] << " ";
         }
         cout << endl;
-        
     }
-    return  0;
+    return 0;
 }
